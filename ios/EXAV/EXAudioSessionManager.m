@@ -261,6 +261,11 @@ EX_REGISTER_SINGLETON_MODULE(AudioSessionManager);
     return error;
   }
 
+  [session setAllowHapticsAndSystemSoundsDuringRecording:YES error:&error];
+
+  // ignore the error for setAllowHapticsAndSystemSoundsDuringRecording
+  // simply fail silently in this case
+
   return nil;
 }
 

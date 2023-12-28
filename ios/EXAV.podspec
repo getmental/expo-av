@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.author         = package['author']
   s.homepage       = package['homepage']
   s.platform       = :ios, '13.0'
-  s.source         = { git: 'https://github.com/getmental/expo.git', :branch => 'expo_av_audio_sessions' }
+  s.source         = { git: 'https://github.com/getmental/expo-av.git', :branch => 'main' }
   s.static_framework = true
 
   s.dependency 'ExpoModulesCore'

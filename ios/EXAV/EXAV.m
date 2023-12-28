@@ -49,6 +49,7 @@ NSString *const EXDidUpdateMetadataEventName = @"didUpdateMetadata";
 @property (nonatomic, assign) EXAudioInterruptionMode audioInterruptionMode;
 @property (nonatomic, assign) BOOL playsInSilentMode;
 @property (nonatomic, assign) BOOL allowsAudioRecording;
+@property (nonatomic, assign) BOOL defaultsToSpeaker;
 @property (nonatomic, assign) BOOL staysActiveInBackground;
 
 @property (nonatomic, assign) int soundDictionaryKeyCount;
@@ -327,7 +328,7 @@ EX_EXPORT_MODULE(ExponentAV);
   }
 
   if (_defaultsToSpeaker) {
-    requiredAudioCategoryOptions = requiredAudioCategoryOptions | AVAudioSessionCategoryOptionDefaultToSpeaker
+    requiredAudioCategoryOptions = requiredAudioCategoryOptions | AVAudioSessionCategoryOptionDefaultToSpeaker;
   }
   
   return [_kernelAudioSessionManagerDelegate setCategory:requiredAudioCategory withOptions:requiredAudioCategoryOptions forModule:self];
